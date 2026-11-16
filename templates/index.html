@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harry Potter</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Harry Potter</h1>
+    <p>{{len .}} personnages</p>
+  </header>
+
+  <main class="grille">
+    {{range .}}
+    <article class="carte">
+      <img src="{{.Image}}" alt="{{.FullName}}" loading="lazy">
+      <div class="contenu">
+        <h2>{{.FullName}}</h2>
+        <p><strong>Maison :</strong> {{.HogwartsHouse}}</p>
+        <p><strong>Joué par :</strong> {{.InterpretedBy}}</p>
+        <p><strong>Naissance :</strong> {{.Birthdate}}</p>
+      </div>
+    </article>
+    {{end}}
+  </main>
+</body>
+</html>
